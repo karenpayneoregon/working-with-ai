@@ -1,4 +1,4 @@
-html {
+﻿html {
   font-size: 14px;
 }
 
@@ -28,4 +28,43 @@ body {
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
+}
+
+:lang(en).required:after {
+    content: " (required)";
+    color: red;
+}
+
+:lang(sp).required:after {
+    content: " (Requerido)";
+    color: red;
+}
+
+:lang(zh).required:after {
+    content: " (Bìxū de)";
+    color: red;
+}
+
+fieldset {
+    padding: 5px;
+}
+
+.fieldset-auto-width {
+    display: inline-block;
+}
+
+legend {
+    background: blue;
+    color: white;
+    border: solid 1px black;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.ledgendSpan {
+    padding-left: 10px;
+    padding-right: 10px;
 }
