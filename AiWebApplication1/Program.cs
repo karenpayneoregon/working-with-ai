@@ -9,6 +9,7 @@ public class Program
     {
         // Configure Serilog
         var logPath = Path.Combine(AppContext.BaseDirectory, "Log", DateTime.UtcNow.ToString("yyyy-MM-dd"), "log.txt");
+
         Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Information()
             .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
