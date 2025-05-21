@@ -8,7 +8,8 @@ public class Program
     public static void Main(string[] args)
     {
         // Configure Serilog
-        var logPath = Path.Combine(AppContext.BaseDirectory, "Log", DateTime.UtcNow.ToString("yyyy-MM-dd"), "log.txt");
+        var logPath = Path.Combine(AppContext.BaseDirectory, "Log", 
+            DateTime.UtcNow.ToString("yyyy-MM-dd"), "log.txt");
 
         Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Information()
