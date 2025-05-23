@@ -8,7 +8,7 @@ internal partial class Program
     {
         var fileOps = new FileOperations();
         fileOps.DeleteSnagit(@"C:\Users\paynek\Documents\Snagit");
-        AnsiConsole.MarkupLine("[yellow]Hello[/]");
+        AnsiConsole.MarkupLine("[yellow]Continue[/]");
         Console.ReadLine();
     }
 }

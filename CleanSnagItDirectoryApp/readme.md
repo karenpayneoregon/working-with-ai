@@ -8,3 +8,7 @@ Of course, a developer can write code to perform what ChatGPT provided, but the 
 ---
 
 ![Figure1](assets/figure1.png)
+
+Here SnagIt has several files open.
+
+![Figure2](assets/figure2.png)
