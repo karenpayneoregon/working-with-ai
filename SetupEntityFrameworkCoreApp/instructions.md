@@ -1,5 +1,13 @@
 # About
-
+<!--TOC-->
+- [Pre-steps](#pre-steps)
+  - [Add EF Core NuGet Package Reference](#add-ef-core-nuget-package-reference)
+  - [Add new Razor page](#add-new-razor-page)
+  - [Connection string](#connection-string)
+  - [Logging configuration](#logging-configuration)
+  - [Back to DbContext configuration](#back-to-dbcontext-configuration)
+  - [Summary](#summary)
+<!--/TOC-->
 An experiment using GitHub Copilot to create a Razor page application using Entity Framework Core with a file logger.
 
 > **Note**
