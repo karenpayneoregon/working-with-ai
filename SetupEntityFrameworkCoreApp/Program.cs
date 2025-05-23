@@ -1,5 +1,10 @@
 namespace SetupEntityFrameworkCoreApp;
 
+using Microsoft.EntityFrameworkCore;
+using Data;
+using EntityCoreFileLogger;
+using Microsoft.Extensions.Logging;
+
 public class Program
 {
     public static void Main(string[] args)
@@ -8,6 +13,14 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddRazorPages();
+        
+        // Register DbContext with pooling, sensitive data logging, and file logger
+        builder.Services.AddDbContextPool<Context>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+                .EnableSensitiveDataLogging()
+                .LogTo(new DbContextToFileLogger().Log,
+                    [DbLoggerCategory.Database.Command.Name],
+                    LogLevel.Information));
 
         var app = builder.Build();
 

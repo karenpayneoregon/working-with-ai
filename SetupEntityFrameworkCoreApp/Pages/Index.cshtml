@@ -3,8 +3,65 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<h1>View Customers</h1>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].Street)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].Region)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].PostalCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].Phone)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Customers[0].CityPostal)
+            </th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Customers)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Street)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Region)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostalCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.CityPostal)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

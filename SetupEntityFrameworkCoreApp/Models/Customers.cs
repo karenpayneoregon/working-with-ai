@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace SetupEntityFrameworkCoreApp.Models;
 
@@ -12,6 +13,7 @@ public partial class Customers
     /// <summary>
     /// Company
     /// </summary>
+    [Display(Name = "Company Name")]
     public string CompanyName { get; set; }
 
     public int? ContactId { get; set; }
@@ -22,6 +24,7 @@ public partial class Customers
 
     public string Region { get; set; }
 
+    [Display(Name = "Postal")]
     public string PostalCode { get; set; }
 
     public int? CountryIdentifier { get; set; }
@@ -33,7 +36,7 @@ public partial class Customers
     public int? ContactTypeIdentifier { get; set; }
 
     public DateTime? ModifiedDate { get; set; }
-
+    [Display(Name = "City-Postal")]
     public string CityPostal { get; set; }
 
     public virtual Contacts Contact { get; set; }

@@ -9,6 +9,19 @@
 	<ItemGroup>
 		<PackageReference Include="EntityCoreFileLogger" Version="1.0.0" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.3" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.3" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<Folder Include="assets\" />
+	</ItemGroup>
+
+	<Target Name="MakeLogDir" AfterTargets="Build">
+		<MakeDir Directories="$(OutDir)LogFiles\$([System.DateTime]::Now.ToString(yyyy-MM-dd))" Condition="'$(Configuration)' == 'Debug'" />
+	</Target>
 </Project>
