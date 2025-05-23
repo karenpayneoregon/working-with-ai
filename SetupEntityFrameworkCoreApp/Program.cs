@@ -16,11 +16,17 @@ public class Program
         
         // Register DbContext with pooling, sensitive data logging, and file logger
         builder.Services.AddDbContextPool<Context>(options =>
+        {
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-                .EnableSensitiveDataLogging()
-                .LogTo(new DbContextToFileLogger().Log,
-                    [DbLoggerCategory.Database.Command.Name],
-                    LogLevel.Information));
+                   .LogTo(new DbContextToFileLogger().Log,
+                          [DbLoggerCategory.Database.Command.Name],
+                          LogLevel.Information);
+
+            if (builder.Environment.IsDevelopment())
+            {
+                options.EnableSensitiveDataLogging();
+            }
+        });
 
         var app = builder.Build();
 

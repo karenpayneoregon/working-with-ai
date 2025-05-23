@@ -1,3 +1,10 @@
+# About
+
+An experiment using GitHub Copilot to create a Razor page application using Entity Framework Core with a file logger.
+
+> **Note**
+> To run this project first run the SQL script in the `Scripts` folder to create the database and tables. 
+
 # Pre-steps
 
 - Used EF Core Power Tools to scaffold the database context and entity classes from an existing database.
@@ -142,3 +149,12 @@ I did not want that instead I added the following code to the project file to cr
 </Target> 
 ```
 
+## Back to DbContext configuration
+
+Since most applications should not expose sensitive data, I asked Copilot only log sensitive information for `builder.Environment.IsDevelopment()`
+
+![Figire7](assets/figire7.png)
+
+## Summary
+
+For this exercise, the only real issue was with EF Core logging and can understand this as the logging code came from a NuGet package, otherwise all went well.
