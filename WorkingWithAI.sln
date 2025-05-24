@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "No code", "No code", "{5674
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetupEntityFrameworkCoreApp", "SetupEntityFrameworkCoreApp\SetupEntityFrameworkCoreApp.csproj", "{6B0BF397-60CB-4447-AFF9-0886329FBFE8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsHasEnumConversionApp", "CarsHasEnumConversionApp\CarsHasEnumConversionApp.csproj", "{B0E36E4C-3B0C-4012-90B9-213CFC08DDC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{6B0BF397-60CB-4447-AFF9-0886329FBFE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B0BF397-60CB-4447-AFF9-0886329FBFE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B0BF397-60CB-4447-AFF9-0886329FBFE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0E36E4C-3B0C-4012-90B9-213CFC08DDC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0E36E4C-3B0C-4012-90B9-213CFC08DDC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0E36E4C-3B0C-4012-90B9-213CFC08DDC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0E36E4C-3B0C-4012-90B9-213CFC08DDC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +55,7 @@ Global
 		{27E47E34-3F65-3B6B-5D24-607632A097D9} = {37B2BAF6-00DA-1620-F646-733568060613}
 		{AED229DB-E302-97D0-88BB-41ABF4563D6C} = {14D02EA4-5DED-C9FB-331A-828A6D0B1867}
 		{6B0BF397-60CB-4447-AFF9-0886329FBFE8} = {37B2BAF6-00DA-1620-F646-733568060613}
+		{B0E36E4C-3B0C-4012-90B9-213CFC08DDC4} = {37B2BAF6-00DA-1620-F646-733568060613}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3E94EFFC-9BF8-4632-B9D2-23D81EEB6555}
