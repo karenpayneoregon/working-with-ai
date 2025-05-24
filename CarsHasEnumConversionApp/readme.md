@@ -1,30 +1,11 @@
 ﻿# About
 
+![img](https://img.shields.io/static/v1?label=C%23&message=Copilot&color=<COLOR>)
 
-## First prompt to Copilot	
+This code sample is for seeing if `Copilot` can set up a `int to enum conversion`. As mentioned below there were failures for adding a connection string to appsettings.json and modifying a property type. 
 
-- add connection string to appsettings.json and alter code to read from appsettings.json
 
-Tried the above two time but Copilot did not get it right. After the failure the following was recommended.
+My thought is Copilot did a decent job for an experienced developer while for a novice developer they might struggle with not understanding missing changing Manufacturer property in Automobiles model.
 
-```csharp
-protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-{
-    var config = new ConfigurationBuilder()
-        .SetBasePath(Directory.GetCurrentDirectory())
-        .AddJsonFile("appsettings.json")
-        .Build();
-    optionsBuilder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
-}
-```
 
-Had to manually add the connection string to the appsettings.json file.
-```json
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=CarsDatabase;Integrated Security=True;Encrypt=False"
-  }
-}
-```
-
-## Second prompt to Copilot
+See [Instructions.md](Instructions.md) for the prompts used to generate the code.

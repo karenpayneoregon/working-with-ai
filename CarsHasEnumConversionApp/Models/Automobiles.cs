@@ -11,5 +11,5 @@ public partial class Automobiles
 
     public string CarName { get; set; }
 
-    public int? Manufacturer { get; set; }
+    public Manufacturer Manufacturer { get; set; }
 }

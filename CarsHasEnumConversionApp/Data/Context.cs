@@ -9,14 +9,9 @@ namespace CarsHasEnumConversionApp.Models;
 
 public partial class Context : DbContext
 {
-    public Context()
-    {
-    }
+    public Context() { }
 
-    public Context(DbContextOptions<Context> options)
-        : base(options)
-    {
-    }
+    public Context(DbContextOptions<Context> options) : base(options) { }
 
     public virtual DbSet<Automobiles> Automobiles { get; set; }
 
@@ -30,6 +25,12 @@ public partial class Context : DbContext
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Automobiles>(entity =>
+        {
+            entity.Property(e => e.Manufacturer)
+                .HasConversion<int>();
+        });
+
         OnModelCreatingPartial(modelBuilder);
     }
 
