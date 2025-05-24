@@ -6,58 +6,51 @@
 <h1>View Customers</h1>
 
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Customers[0].CompanyName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Customers[0].Street)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Customers[0].City)
-            </th>
+<div class="container">
+    <!-- Header row -->
+    <div class="row fw-bold border-bottom pb-2 mb-2">
+        <div class="col">
+            @Html.DisplayNameFor(model => model.Customers[0].CompanyName)
+        </div>
+        <div class="col">
+            @Html.DisplayNameFor(model => model.Customers[0].Street)
+        </div>
+        <div class="col">
+            @Html.DisplayNameFor(model => model.Customers[0].City)
+        </div>
+        <div class="col">
+            @Html.DisplayNameFor(model => model.Customers[0].PostalCode)
+        </div>
+        <div class="col">
+            @Html.DisplayNameFor(model => model.Customers[0].Phone)
+        </div>
+        <div class="col">
+            @Html.DisplayNameFor(model => model.Customers[0].CityPostal)
+        </div>
+    </div>
 
-            <th>
-                @Html.DisplayNameFor(model => model.Customers[0].PostalCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Customers[0].Phone)
-            </th>
-
-            <th>
-                @Html.DisplayNameFor(model => model.Customers[0].CityPostal)
-            </th>
-
-
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Customers)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CompanyName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Street)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.City)
-                </td>
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.PostalCode)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Phone)
-                </td>
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.CityPostal)
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+    <!-- Data rows -->
+    @foreach (var item in Model.Customers)
+    {
+        <div class="row border-bottom py-2">
+            <div class="col">
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </div>
+            <div class="col">
+                @Html.DisplayFor(modelItem => item.Street)
+            </div>
+            <div class="col">
+                @Html.DisplayFor(modelItem => item.City)
+            </div>
+            <div class="col">
+                @Html.DisplayFor(modelItem => item.PostalCode)
+            </div>
+            <div class="col">
+                @Html.DisplayFor(modelItem => item.Phone)
+            </div>
+            <div class="col">
+                @Html.DisplayFor(modelItem => item.CityPostal)
+            </div>
+        </div>
+    }
+</div>
