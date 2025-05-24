@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using CarsHasEnumConversionApp.Classes;
 
 namespace CarsHasEnumConversionApp.Models;
 
@@ -17,11 +18,11 @@ public partial class Context : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        var config = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json")
-            .Build();
-        optionsBuilder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
+        //IConfigurationRoot config = new ConfigurationBuilder()
+        //    .SetBasePath(Directory.GetCurrentDirectory())
+        //    .AddJsonFile("appsettings.json")
+        //    .Build();
+        optionsBuilder.UseSqlServer(Helpers.GetConnectionString());
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
