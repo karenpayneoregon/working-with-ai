@@ -6,6 +6,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
 
+	<!-- Added by Copilot-->
 	<ItemGroup>
 		<PackageReference Include="EntityCoreFileLogger" Version="1.0.0" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.3" />
@@ -21,6 +22,7 @@
 		<Folder Include="assets\" />
 	</ItemGroup>
 
+	<!-- Added by Karen-->
 	<Target Name="MakeLogDir" AfterTargets="Build">
 		<MakeDir Directories="$(OutDir)LogFiles\$([System.DateTime]::Now.ToString(yyyy-MM-dd))" Condition="'$(Configuration)' == 'Debug'" />
 	</Target>
