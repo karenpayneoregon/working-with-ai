@@ -9,10 +9,10 @@
 <div class="container">
     <!-- Header row -->
     <div class="row fw-bold border-bottom pb-2 mb-2">
-        <div class="col">
+        <div class="col-4">
             @Html.DisplayNameFor(model => model.Customers[0].CompanyName)
         </div>
-        <div class="col">
+        <div class="col-4">
             @Html.DisplayNameFor(model => model.Customers[0].Street)
         </div>
         <div class="col">
@@ -24,19 +24,17 @@
         <div class="col">
             @Html.DisplayNameFor(model => model.Customers[0].Phone)
         </div>
-        <div class="col">
-            @Html.DisplayNameFor(model => model.Customers[0].CityPostal)
-        </div>
+
     </div>
 
     <!-- Data rows -->
     @foreach (var item in Model.Customers)
     {
         <div class="row border-bottom py-2">
-            <div class="col">
+            <div class="col-4">
                 @Html.DisplayFor(modelItem => item.CompanyName)
             </div>
-            <div class="col">
+            <div class="col-4">
                 @Html.DisplayFor(modelItem => item.Street)
             </div>
             <div class="col">
@@ -48,9 +46,7 @@
             <div class="col">
                 @Html.DisplayFor(modelItem => item.Phone)
             </div>
-            <div class="col">
-                @Html.DisplayFor(modelItem => item.CityPostal)
-            </div>
+
         </div>
     }
 </div>
