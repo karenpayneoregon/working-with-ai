@@ -1,6 +1,10 @@
 ﻿using Microsoft.Extensions.Configuration;
 
 namespace CarsHasEnumConversionApp.Classes;
+
+/// <summary>
+/// Coded by Karen, Copilot suggested the rest.
+/// </summary>
 public class Helpers
 {
     /// <summary>
