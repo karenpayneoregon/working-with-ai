@@ -5,19 +5,13 @@ using SetupEntityFrameworkCoreApp.Data;
 using SetupEntityFrameworkCoreApp.Models;
 
 namespace SetupEntityFrameworkCoreApp.Pages;
-public class IndexModel : PageModel
+public class IndexModel(Context context) : PageModel
 {
-    private readonly SetupEntityFrameworkCoreApp.Data.Context _context;
-
-    public IndexModel(Context context)
-    {
-       _context = context;
-    }
-    public IList<Customers> Customers { get; set; } = default!;
+    public IList<Customers> Customers { get; set; } = null!;
 
     public async Task OnGetAsync()
     {
-        Customers = await _context.Customers
+        Customers = await context.Customers
             .Include(c => c.Contact)
             .Include(c => c.ContactTypeIdentifierNavigation)
             .Include(c => c.CountryIdentifierNavigation).ToListAsync();
