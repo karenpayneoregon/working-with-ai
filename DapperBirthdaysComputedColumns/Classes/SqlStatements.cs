@@ -8,7 +8,7 @@ internal class SqlStatements
             ,LastName
             ,BirthDate
             ,YearsOld
-        FROM BirthDaysDatabase.dbo.BirthDays
+        FROM dbo.BirthDays
         ORDER BY YearsOld DESC
         """;
 }
