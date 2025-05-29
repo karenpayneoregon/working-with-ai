@@ -1,9 +1,14 @@
-﻿using Microsoft.Extensions.FileSystemGlobbing;
+﻿using GitLibrary.Models;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Extensions.FileSystemGlobbing.Abstractions;
 #pragma warning disable CA1822
 
 namespace GitLibrary;
 
+/// <summary>
+/// Work in progress
+/// </summary>
 public class FileOperations
 {
     /// <summary>
@@ -22,18 +27,20 @@ public class FileOperations
     public Task<List<string>> FindInstructionFilesAsync(string rootDirectory, CancellationToken cancellationToken) =>
         Task.Run(() =>
         {
-            var matcher = new Matcher();
-            matcher.AddInclude("**/copilot-instructions.md");
-
+            Matcher matcher = new();
+            string[] includePatterns = ["**/copilot-instructions.md", "**/.instructions.md"];
+            matcher.AddIncludePatterns(includePatterns);
+            
             var result = new List<string>();
 
             if (!Directory.Exists(rootDirectory))
-                return result; // Or throw if this is still critical
+                return result;
 
             var matchResults = matcher.Execute(new DirectoryInfoWrapper(new DirectoryInfo(rootDirectory)));
 
             foreach (var file in matchResults.Files)
             {
+
                 if (cancellationToken.IsCancellationRequested)
                 {
                     return result;
@@ -46,4 +53,31 @@ public class FileOperations
             return result;
 
         }, cancellationToken);
+
+    /// <summary>
+    /// Retrieves the global settings for the application from appsettings.json.
+    /// </summary>
+    /// <returns>
+    /// An instance of <see cref="GitLibrary.Models.GlobalSetting"/> containing the global configuration settings.
+    /// </returns>
+    public static GlobalSetting GetGlobalSettings() 
+        => ConsoleConfigurationLibrary.Classes.Configuration.JsonRoot().GetSection(nameof(GlobalSetting)).Get<GlobalSetting>()!;
+
+
+    /// <summary>
+    /// Determines whether all required files, as specified in the global settings, are present in the configured directory.
+    /// </summary>
+    /// <returns>
+    /// <c>true</c> if the folder exists and all required files are present; otherwise, <c>false</c>.
+    /// </returns>
+    public static bool AllRequiredFilesPresent()
+    {
+        var settings = GetGlobalSettings();
+
+        if (!Directory.Exists(settings.Directory))
+            return false;
+
+        List<string> expectedFiles = [settings.CentralInstructionFile, settings.CentralPromptFile];
+        return expectedFiles.All(f => File.Exists(Path.Combine(settings.Directory, f)));
+    }
 }
