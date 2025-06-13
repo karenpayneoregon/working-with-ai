@@ -14,6 +14,7 @@ public class IndexModel(Context context) : PageModel
         Customers = await context.Customers
             .Include(c => c.Contact)
             .Include(c => c.ContactTypeIdentifierNavigation)
-            .Include(c => c.CountryIdentifierNavigation).ToListAsync();
+            .Include(c => c.CountryIdentifierNavigation)
+            .ToListAsync();
     }
 }

@@ -33,6 +33,7 @@ partial class Form1
         lblStatus = new Label();
         CancelFindInstructionsButton = new Button();
         InstructionFilesListBox = new ListBox();
+        button1 = new Button();
         SuspendLayout();
         // 
         // FindInstructionFilesButton
@@ -73,11 +74,21 @@ partial class Form1
         InstructionFilesListBox.Size = new Size(710, 204);
         InstructionFilesListBox.TabIndex = 3;
         // 
+        // button1
+        // 
+        button1.Location = new Point(426, 29);
+        button1.Name = "button1";
+        button1.Size = new Size(94, 29);
+        button1.TabIndex = 4;
+        button1.Text = "button1";
+        button1.UseVisualStyleBackColor = true;
+        // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(733, 453);
+        Controls.Add(button1);
         Controls.Add(InstructionFilesListBox);
         Controls.Add(CancelFindInstructionsButton);
         Controls.Add(lblStatus);
@@ -96,4 +107,5 @@ partial class Form1
     private Label lblStatus;
     private Button CancelFindInstructionsButton;
     private ListBox InstructionFilesListBox;
+    private Button button1;
 }

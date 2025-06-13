@@ -1,9 +1,8 @@
+using SetupEntityFrameworkCoreApp.Classes;
+
 namespace SetupEntityFrameworkCoreApp;
 
-using Microsoft.EntityFrameworkCore;
 using Data;
-using EntityCoreFileLogger;
-using Microsoft.Extensions.Logging;
 
 public class Program
 {
@@ -11,22 +10,17 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
         builder.Services.AddRazorPages();
-        
-        // Register DbContext with pooling, sensitive data logging, and file logger
-        builder.Services.AddDbContextPool<Context>(options =>
-        {
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-                   .LogTo(new DbContextToFileLogger().Log,
-                          [DbLoggerCategory.Database.Command.Name],
-                          LogLevel.Information);
 
-            if (builder.Environment.IsDevelopment())
-            {
-                options.EnableSensitiveDataLogging();
-            }
-        });
+        var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+        if (string.IsNullOrEmpty(connectionString))
+        {
+            throw new InvalidOperationException("The connection string 'DefaultConnection' is not configured.");
+        }
+
+        builder.Services.AddDbContextPool<Context>(_ => { });
+        var options = ContextOptions.DbContextOptionsBuilderProduction(connectionString).Options;
+        builder.Services.AddSingleton(options);
 
         var app = builder.Build();
 

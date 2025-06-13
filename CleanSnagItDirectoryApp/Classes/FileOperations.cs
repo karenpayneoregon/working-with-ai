@@ -1,6 +1,7 @@
 ﻿namespace CleanSnagItDirectoryApp.Classes;
 public class FileOperations
 {
+    
     /// <summary>
     /// Deletes all `.snagx` files in the specified directory that start with the current year.
     /// </summary>
@@ -18,7 +19,7 @@ public class FileOperations
     /// <exception cref="UnauthorizedAccessException">
     /// Thrown if the application lacks the necessary permissions to delete files.
     /// </exception>
-    public void DeleteSnagit(string directoryPath)
+    public void DeleteFiles(string directoryPath)
     {
         if (!Directory.Exists(directoryPath))
         {
@@ -26,7 +27,7 @@ public class FileOperations
             return;
         }
 
-        string currentYear = DateTime.Now.Year.ToString();
+        var currentYear = DateTime.Now.Year.ToString();
         string[] files = Directory.GetFiles(directoryPath, $"{currentYear}*.snagx");
 
         foreach (var file in files)
