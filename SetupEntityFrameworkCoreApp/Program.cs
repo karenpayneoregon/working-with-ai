@@ -1,4 +1,5 @@
 using SetupEntityFrameworkCoreApp.Classes;
+using SetupEntityFrameworkCoreApp.Models;
 
 namespace SetupEntityFrameworkCoreApp;
 
@@ -12,14 +13,14 @@ public class Program
 
         builder.Services.AddRazorPages();
 
-        var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+        var connectionString = builder.Configuration.GetConnectionString(nameof(ConnectionStrings.DefaultConnection));
         if (string.IsNullOrEmpty(connectionString))
         {
-            throw new InvalidOperationException("The connection string 'DefaultConnection' is not configured.");
+            throw new InvalidOperationException($"The connection string {nameof(ConnectionStrings.DefaultConnection)} is not configured.");
         }
 
         builder.Services.AddDbContextPool<Context>(_ => { });
-        var options = ContextOptions.DbContextOptionsBuilderProduction(connectionString).Options;
+        var options = ContextOptions.Production(connectionString).Options;
         builder.Services.AddSingleton(options);
 
         var app = builder.Build();

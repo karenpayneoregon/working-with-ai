@@ -21,7 +21,7 @@ internal class ContextOptions
     /// This method is intended for use in development environments. It configures logging to output 
     /// database commands to the debug console and enables sensitive data logging for debugging purposes.
     /// </remarks>
-    public static DbContextOptionsBuilder<Context> DbContextOptionsBuilderDevelopment(string connectionString)
+    public static DbContextOptionsBuilder<Context> Development(string connectionString)
     {   
 
         var options = new DbContextOptionsBuilder<Context>()
@@ -48,7 +48,7 @@ internal class ContextOptions
     /// This method is intended for use in production environments. It configures logging to output 
     /// database commands to a file using a custom logger and does not enable sensitive data logging.
     /// </remarks>
-    public static DbContextOptionsBuilder<Context> DbContextOptionsBuilderProduction(string connectionString)
+    public static DbContextOptionsBuilder<Context> Production(string connectionString)
     {
 
         var options = new DbContextOptionsBuilder<Context>()
