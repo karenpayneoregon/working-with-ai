@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using SetupEntityFrameworkCoreApp.Data;
 
 namespace SetupEntityFrameworkCoreApp.Classes;
-internal class ContextOptions
+internal class ContextOptionsLocal
 {
     /// <summary>
     /// Configures and returns a new instance of <see cref="DbContextOptionsBuilder{TContext}"/> 

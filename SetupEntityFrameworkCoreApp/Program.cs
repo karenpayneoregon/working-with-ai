@@ -1,9 +1,11 @@
+using EntityFrameworkHelpers;
 using SetupEntityFrameworkCoreApp.Classes;
 using SetupEntityFrameworkCoreApp.Models;
 
 namespace SetupEntityFrameworkCoreApp;
 
 using Data;
+using Microsoft.EntityFrameworkCore;
 
 public class Program
 {
@@ -20,8 +22,10 @@ public class Program
         }
 
         builder.Services.AddDbContextPool<Context>(_ => { });
-        var options = ContextOptions.Production(connectionString).Options;
-        builder.Services.AddSingleton(options);
+
+        var options = ContextOptions.Production<Context>(connectionString);
+
+        builder.Services.AddSingleton(options.Options);
 
         var app = builder.Build();
 

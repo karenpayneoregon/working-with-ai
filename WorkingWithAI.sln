@@ -35,6 +35,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Git instructions", "Git ins
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitLibrary", "GitLibrary\GitLibrary.csproj", "{F72F77A5-6259-41E8-B7F3-D7C826F01453}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Class projects", "Class projects", "{7ED96ADF-5B8A-19A9-CADD-FD7FC1302130}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkHelpers", "EntityFramworkHelpers\EntityFrameworkHelpers.csproj", "{A30C5EB6-E378-4C6A-8965-0B95022EAC2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,10 @@ Global
 		{F72F77A5-6259-41E8-B7F3-D7C826F01453}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F72F77A5-6259-41E8-B7F3-D7C826F01453}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F72F77A5-6259-41E8-B7F3-D7C826F01453}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A30C5EB6-E378-4C6A-8965-0B95022EAC2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A30C5EB6-E378-4C6A-8965-0B95022EAC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A30C5EB6-E378-4C6A-8965-0B95022EAC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A30C5EB6-E378-4C6A-8965-0B95022EAC2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +93,8 @@ Global
 		{A12859A1-3D3A-48B9-9C52-DC7AFFC23594} = {83D3C906-7822-F4E3-B901-3BB4356F9722}
 		{83D3C906-7822-F4E3-B901-3BB4356F9722} = {DD12CD9D-1258-81E6-E2E3-DA8D5F661111}
 		{F72F77A5-6259-41E8-B7F3-D7C826F01453} = {83D3C906-7822-F4E3-B901-3BB4356F9722}
+		{7ED96ADF-5B8A-19A9-CADD-FD7FC1302130} = {AD26D183-7F01-ED59-B75D-12D30FE80BD7}
+		{A30C5EB6-E378-4C6A-8965-0B95022EAC2D} = {7ED96ADF-5B8A-19A9-CADD-FD7FC1302130}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3E94EFFC-9BF8-4632-B9D2-23D81EEB6555}

@@ -22,6 +22,10 @@
 		<Folder Include="assets\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\EntityFramworkHelpers\EntityFrameworkHelpers.csproj" />
+	</ItemGroup>
+
 	<!-- Added by Karen-->
 	<Target Name="MakeLogDir" AfterTargets="Build">
 		<MakeDir Directories="$(OutDir)LogFiles\$([System.DateTime]::Now.ToString(yyyy-MM-dd))" Condition="'$(Configuration)' == 'Debug'" />
