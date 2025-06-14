@@ -4,6 +4,8 @@ See if ChatGPT can help you write a simple, self‑contained example for `Contex
 
 ## Instructions
 
+![Chat](images/chat.png)
+
 Below is the simplest, self‑contained example that shows how to call your **`Production<T>`** helper when **`T` is a DbContext called `Context`** and then spin the context up for use.
 
 ```csharp
