@@ -22,8 +22,10 @@ public class Program
         }
 
         builder.Services.AddDbContextPool<Context>(_ => { });
+        var options = builder.Environment.IsDevelopment() ? 
+            ContextOptions.Development<Context>(connectionString) : 
+            ContextOptions.Production<Context>(connectionString);
 
-        var options = ContextOptions.Production<Context>(connectionString);
 
         builder.Services.AddSingleton(options.Options);
 
